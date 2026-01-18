@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Math Game</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #e0f7fa;
+      text-align: center;
+    }
+    .game-box {
+      background: white;
+      padding: 20px;
+      width: 400px;
+      margin: 80px auto;
+      border-radius: 10px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-box">
+    <h2>Welcome, <span id="playerName"></span></h2>
+    <p>ID Number: <b>TO-1002</b></p>
+    <p>Level: <span id="level">1</span>/10</p>
+    <p>Coins: <span id="coins">0</span></p>
+
+    <h3 id="question"></h3>
+    <input type="number" id="answer" placeholder="Your Answer">
+    <button onclick="checkAnswer()">Submit</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

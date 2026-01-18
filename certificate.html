@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Certificate</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #fff3e0;
+    }
+    .certificate {
+      border: 5px solid #333;
+      padding: 40px;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="certificate" id="cert">
+    <h1>Certificate of Recognition</h1>
+    <p>This is to certify that</p>
+    <h2 id="name"></h2>
+    <p>has successfully completed the Math Game</p>
+    <p>Score: <span id="score"></span> coins</p>
+  </div>
+
+  <button onclick="downloadPDF()">Download Certificate (PDF)</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script>
+    const score = localStorage.getItem("coins");
+    document.getElementById("name").innerText =
+      localStorage.getItem("name");
+    document.getElementById("score").innerText = score;
+
+    if (score < 80) {
+      alert("Score is below 80. No certificate awarded.");
+    }
+
+    function downloadPDF() {
+      html2pdf().from(document.getElementById("cert")).save();
+    }
+  </script>
+
+</body>
+</html>
+
+
+
